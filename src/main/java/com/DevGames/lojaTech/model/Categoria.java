@@ -10,11 +10,14 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
+	@NotNull
+	private String nomeCategoria;
+
 	@NotNull
 	private String classificacao;
 
@@ -33,6 +36,13 @@ public class Categoria {
 	public void setClassificacao(String classificacao) {
 		this.classificacao = classificacao;
 	}
-	
-	
+
+	public String getNomeCategoria() {
+		return nomeCategoria;
+	}
+
+	public void setNomeCategoria(String nomeCategoria) {
+		this.nomeCategoria = nomeCategoria;
+	}
+
 }
